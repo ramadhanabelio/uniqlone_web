@@ -4,7 +4,7 @@
 
 ##
 
-### UNIQLONE | Multiplatform Apps (Web PHP Native with API + Mobile Flutter)
+### UNIQLONE, Uniqlo CRUD Clone Application
 
 </div>
 
