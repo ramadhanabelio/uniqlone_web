@@ -67,6 +67,8 @@ function redirect($location)
     <link rel="icon" type="image/x-icon" href="img/UNIQLO.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 </head>
@@ -107,10 +109,10 @@ function redirect($location)
                             <td><?= $res['nama'] ?></td>
                             <td><?= $res['kategori'] ?></td>
                             <td><?= $res['deskripsi'] ?></td>
-                            <td><img src='./img/<?= $res['gambar'] ?>' width='200' class='img-thumbnail rounded mx-auto d-block'></td>
+                            <td><img src='./uploads/<?= $res['gambar'] ?>' width='200' class='img-thumbnail rounded mx-auto d-block'></td>
                             <td>
-                                <a href="#" class='btn btn-primary btn-sm' data-bs-toggle="modal" data-bs-target="#editModal<?= $res['id'] ?>">Edit</a>
-                                <a href="#" class='btn btn-danger btn-sm' data-bs-toggle="modal" data-bs-target="#deleteModal<?= $res['id'] ?>">Delete</a>
+                                <a href="#" class='badge text-bg-primary text-decoration-none' data-bs-toggle="modal" data-bs-target="#editModal<?= $res['id'] ?>"><i class="bi bi-pencil"></i> Edit</a>
+                                <a href="#" class='badge text-bg-danger text-decoration-none' data-bs-toggle="modal" data-bs-target="#deleteModal<?= $res['id'] ?>"><i class="bi bi-trash"></i> Hapus</a>
                             </td>
                         </tr>
 
@@ -128,7 +130,7 @@ function redirect($location)
 
                                             <div class="mb-3">
                                                 <label for="current_image" class="form-label">Gambar</label>
-                                                <img src='./img/<?= $res['gambar'] ?>' width='200' class='img-thumbnail rounded mx-auto d-block'>
+                                                <img src='./uploads/<?= $res['gambar'] ?>' width='200' class='img-thumbnail rounded mx-auto d-block'>
                                             </div>
 
                                             <div class="mb-3">
@@ -150,7 +152,7 @@ function redirect($location)
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                            <button type="submit" class="btn btn-primary" name="edit_produk">Simpan Perubahan</button>
+                                            <button type="submit" class="btn btn-primary" name="edit_produk">Edit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -231,12 +233,8 @@ function redirect($location)
     <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-    <!-- DataTables -->
-    <script>
-        $(document).ready(function() {
-            $('#productTable').DataTable();
-        });
-    </script>
+    <!-- My JS -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>

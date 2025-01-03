@@ -18,7 +18,7 @@ function createProduk($nama, $kategori, $deskripsi, $gambar)
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param("ssss", $nama, $kategori, $deskripsi, $gambar);
 
-    $target_dir = "img/";
+    $target_dir = "uploads/";
     $target_file = $target_dir . basename($gambar);
     move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_file);
 
@@ -45,7 +45,7 @@ function updateProduk($id, $nama, $kategori, $deskripsi, $gambar)
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param("ssssi", $nama, $kategori, $deskripsi, $gambar, $id);
 
-        $target_dir = "img/";
+        $target_dir = "uploads/";
         $target_file = $target_dir . basename($gambar);
         move_uploaded_file($_FILES["edit_gambar"]["tmp_name"], $target_file);
 
